@@ -15,7 +15,8 @@ jobs:
         node-version: [16.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       # 构建代码
       - name: Build
@@ -26,4 +27,3 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           token: ${{ secrets.TEST_TOKEN }}
-          repository: Zhang-Wei-666/test2
