@@ -16,5 +16,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
+
+      # 构建代码
+      - name: Build
+        run: yarn install --frozen-lockfile && yarn build
+
+      # 创建一个新的 Release
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          token: ${{ secrets.TEST_TOKEN }}
+          repository: Zhang-Wei-666/test2
