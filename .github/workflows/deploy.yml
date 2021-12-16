@@ -28,6 +28,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TEST_TOKEN }}
         with:
+          owner: Zhang-Wei-666
+          repo: test2
           release_name: Release ${{ github.ref }}
           tag_name: ${{ github.ref }}
-          token: ${{ secrets.TEST_TOKEN }}
