@@ -30,5 +30,5 @@ jobs:
         with:
           owner: Zhang-Wei-666
           repo: test2
-          release_name: Release ${{ github.ref }}
-          tag_name: ${{ github.ref }}
+          release_name: v0.0.0
+          tag_name: v0.0.0
