@@ -22,11 +22,10 @@ jobs:
       # 构建代码
       - name: Build
         run: yarn install --frozen-lockfile && yarn build
-        
-      - run: cd dist
 
       - name: Commit
         run: |
+          cd dist
           git init
           git config user.email "994039348@qq.com"
           git config user.name "Zhang-Wei-666"
@@ -34,14 +33,12 @@ jobs:
           git commit -m "update"
 
       - name: Push
-        run: ls
-#         uses: ad-m/github-push-action@master
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.TEST_TOKEN }}
-#         with:
-#           github_token: ${{ secrets.TEST_TOKEN }}
-#           repository: Zhang-Wei-666/test2
-#           force: true
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.TEST_TOKEN }}
+          repository: Zhang-Wei-666/test2
+          directory: dist
+          force: true
 
       # 创建一个新的 Release
 #       - name: Release
