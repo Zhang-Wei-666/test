@@ -21,11 +21,9 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
-      - run: echo release.accept:${{ github.event.release.accept }}
-      - run: echo release.owner:${{ github.event.release.owner }}
-      - run: echo release.repo:${{ github.event.release.repo }}
-      - run: echo release.per_page:${{ github.event.release.per_page }}
-      - run: echo release.page:${{ github.event.release.page }}
+      - run: echo release.tag_name:${{ github.event.release.tag_name }}
+      - run: echo release.name:${{ github.event.release.name }}
+      - run: echo release.body:${{ github.event.release.body }}
 
       # 构建代码
 #       - name: Build
