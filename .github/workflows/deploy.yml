@@ -42,7 +42,7 @@ jobs:
 
       # 创建一个新的 Release
       - name: Release
-        run: echo ${{ github }}
+        run: echo ${{ toJson(github) }}
 #         uses: softprops/action-gh-release@v1
 #         env:
 #           GITHUB_TOKEN: ${{ secrets.TEST_TOKEN }}
