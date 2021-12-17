@@ -34,6 +34,8 @@ jobs:
           
       - name: Push
         uses: ad-m/github-push-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.TEST_TOKEN }}
         with:
           github_token: ${{ secrets.TEST_TOKEN }}
           repository: Zhang-Wei-666/test2
@@ -46,5 +48,5 @@ jobs:
 #           GITHUB_TOKEN: ${{ secrets.TEST_TOKEN }}
 #         with:
 #           repository: Zhang-Wei-666/test2
-#           release_name: v1.0.3
-#           tag_name: v1.0.3
+#           release_name: v1.0.4
+#           tag_name: v1.0.4
