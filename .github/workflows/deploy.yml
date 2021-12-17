@@ -21,15 +21,33 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
-      - run: echo ${{ github.event }}
-      - run: echo ${{ github.workflow }}
-      - run: echo ${{ github.actor }}
-      - run: echo ${{ github.repository }}
-      - run: echo ${{ github.event_name }}
-      - run: echo ${{ github.sha }}
-      - run: echo ${{ github.ref }}
-      - run: echo ${{ github.head_ref }}
-      - run: echo ${{ github.base_ref }}
+      - run: echo branch_protection_rule:${{ github.event.branch_protection_rule }}
+      - run: echo check_run:${{ github.event.check_run }}
+      - run: echo check_suite:${{ github.event.check_suite }}
+      - run: echo create:${{ github.event.create }}
+      - run: echo delete:${{ github.event.delete }}
+      - run: echo deployment$:{{ github.event.deployment }}
+      - run: echo deployment_status:${{ github.event.deployment_status }}
+      - run: echo discussion:${{ github.event.discussion }}
+      - run: echo discussion_comment:${{ github.event.discussion_comment }}
+      - run: echo fork:${{ github.event.fork }}
+      - run: echo gollum:${{ github.event.gollum }}
+      - run: echo issue_comment:${{ github.event.issue_comment }}
+      - run: echo issues:${{ github.event.issues }}
+      - run: echo label:${{ github.event.label }}
+      - run: echo milestone:${{ github.event.milestone }}
+      - run: echo page_build:${{ github.event.page_build }}
+      - run: echo project:${{ github.event.project }}
+      - run: echo project_card:${{ github.event.project_card }}
+      - run: echo project_column:${{ github.event.project_column }}
+      - run: echo public:${{ github.event.public }}
+      - run: echo pull_request:${{ github.event.pull_request }}
+      - run: echo push:${{ github.event.push }}
+      - run: echo registry_package:${{ github.event.registry_package }}
+      - run: echo release:${{ github.event.release }}
+      - run: echo status:${{ github.event.status }}
+      - run: echo watch:${{ github.event.watch }}
+      - run: echo workflow_run:${{ github.event.workflow_run }}
 
       # 构建代码
 #       - name: Build
