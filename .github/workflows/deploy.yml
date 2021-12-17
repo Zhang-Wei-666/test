@@ -20,32 +20,33 @@ jobs:
           fetch-depth: 0
 
       # 构建代码
-      - name: Build
-        run: yarn install --frozen-lockfile && yarn build
+#       - name: Build
+#         run: yarn install --frozen-lockfile && yarn build
 
-      - name: Commit
-        run: |
-          cd dist
-          git init
-          git config user.email "994039348@qq.com"
-          git config user.name "Zhang-Wei-666"
-          git add .
-          git commit -m "update"
+#       - name: Commit
+#         run: |
+#          cd dist
+#          git init
+#          git config user.email "994039348@qq.com"
+#          git config user.name "Zhang-Wei-666"
+#          git add .
+#          git commit -m "update"
 
-      - name: Push
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.TEST_TOKEN }}
-          repository: Zhang-Wei-666/test2
-          directory: dist
-          force: true
+#       - name: Push
+#         uses: ad-m/github-push-action@master
+#         with:
+#           github_token: ${{ secrets.TEST_TOKEN }}
+#           repository: Zhang-Wei-666/test2
+#           directory: dist
+#           force: true
 
       # 创建一个新的 Release
-#       - name: Release
+      - name: Release
+        run: echo ${{ github }}
 #         uses: softprops/action-gh-release@v1
 #         env:
 #           GITHUB_TOKEN: ${{ secrets.TEST_TOKEN }}
 #         with:
 #           repository: Zhang-Wei-666/test2
-#           release_name: v1.0.4
+#           release_name: v${{ github.ref }}
 #           tag_name: v1.0.4
