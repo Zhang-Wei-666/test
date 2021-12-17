@@ -37,6 +37,7 @@ jobs:
         with:
           github_token: ${{ secrets.TEST_TOKEN }}
           repository: Zhang-Wei-666/test2
+          force: true
 
       # 创建一个新的 Release
 #       - name: Release
@@ -45,5 +46,5 @@ jobs:
 #           GITHUB_TOKEN: ${{ secrets.TEST_TOKEN }}
 #         with:
 #           repository: Zhang-Wei-666/test2
-#           release_name: v1.0.1
-#           tag_name: v1.0.1
+#           release_name: v1.0.3
+#           tag_name: v1.0.3
