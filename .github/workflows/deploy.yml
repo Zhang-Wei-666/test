@@ -26,7 +26,7 @@ jobs:
       - run: echo check_suite:${{ github.event.check_suite }}
       - run: echo create:${{ github.event.create }}
       - run: echo delete:${{ github.event.delete }}
-      - run: echo deployment$:{{ github.event.deployment }}
+      - run: echo deployment:${{ github.event.deployment }}
       - run: echo deployment_status:${{ github.event.deployment_status }}
       - run: echo discussion:${{ github.event.discussion }}
       - run: echo discussion_comment:${{ github.event.discussion_comment }}
