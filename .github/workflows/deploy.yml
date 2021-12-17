@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
 
       # 构建代码
       - name: Build
@@ -22,11 +25,18 @@ jobs:
 
       - name: Commit
         run: |
+          cd dist
           git init
           git config user.email "994039348@qq.com"
           git config user.name "Zhang-Wei-666"
           git add .
           git commit -m "update"
+          
+      - name: Push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.TEST_TOKEN }}
+          repository: Zhang-Wei-666/test2
 
       # 创建一个新的 Release
 #       - name: Release
