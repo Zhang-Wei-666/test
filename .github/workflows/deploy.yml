@@ -19,11 +19,18 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2.2.1
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
       # 构建代码
       - name: Build
-        run: |
-          npm install pnpm -g
-          pnpm build
+        run: pnpm build
 
       # 提交打包后的代码
       - name: Commit
