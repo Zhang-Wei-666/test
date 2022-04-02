@@ -21,7 +21,7 @@ jobs:
 
       # 构建代码
       - name: Build
-        run: yarn install --frozen-lockfile && yarn build
+        run: pnpm build
 
       # 提交打包后的代码
       - name: Commit
