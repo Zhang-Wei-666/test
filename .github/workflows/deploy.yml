@@ -21,7 +21,9 @@ jobs:
 
       # 构建代码
       - name: Build
-        run: pnpm build
+        run: |
+          npm install pnpm -g
+          pnpm build
 
       # 提交打包后的代码
       - name: Commit
